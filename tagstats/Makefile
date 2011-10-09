@@ -21,13 +21,13 @@ CXXFLAGS += -DTAGSTATS_GEODISTRIBUTION_FOR_WAYS=SparseTable
 
 CXXFLAGS += -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
 
-CXXFLAGS += -I../../../osmium/osmium/include
+CXXFLAGS += -I../../osmium/include -I../../OSM-binary/include
 
 LDFLAGS = -L/usr/local/lib -lexpat -lpthread
 
 LIB_SQLITE   = -lsqlite3
 LIB_GD       = -lgd -lz -lm
-LIB_PROTOBUF = -lz -lprotobuf-lite -losmpbf
+LIB_PROTOBUF = -lz -lprotobuf-lite -L../../OSM-binary/src -losmpbf
 
 .PHONY: all clean install
 
