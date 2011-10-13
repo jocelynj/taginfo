@@ -58,7 +58,7 @@ def xapi_url(element, key, value=nil)
     else
         predicate += xapi_escape(value)
     end
-    TaginfoConfig.get('xapi.url_prefix', 'http://www.informationfreeway.org/api/0.6/') + "#{ element }[#{ Rack::Utils::escape(predicate) }]"
+    TaginfoConfig.get('xapi.url_prefix', 'http://www.informationfreeway.org/api/0.6/') + "#{ element }[bbox=-5.46,41.23,9.80,51.22][#{ Rack::Utils::escape(predicate) }]"
 end
 
 def xapi_link(element, key, value=nil)
